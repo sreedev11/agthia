@@ -1,0 +1,237 @@
+{% load static %}
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<header>
+
+    
+   
+<div class="container2" style="height: 200px;">
+        <img src="{% static 'logo.png' %}" alt="logo">
+
+    </div>
+    <div class="navbar">
+        <a href="/"class="{% if request.path == '/' %}active{% endif %}" style="text-transform: none;font-size: 20px;">Home</a>
+        <a href="/#about" style="text-transform: none;font-size: 20px;">About</a>
+        <a href="/brand/"class="{% if request.path == '/brand/' %}active{% endif %}" style="text-transform: none;font-size: 20px;">Restaurants</a>
+        <a href="/#reserve" style="text-transform: none;font-size: 20px;">Reservation</a>
+        <a href="/contacts/"class="{% if request.path == '/contacts/' %}active{% endif %}" style="text-transform: none;font-size: 20px;">Contact</a>
+        <a href="/login/"style="text-transform: none;font-size: 20px;">Login</a>
+    </div>
+
+
+    <div class="header">
+        <img src="{% static 'img1.jpg' %}" alt="Delicious Food">
+        <div class="header-text" style="left: 35%;">
+            <h1>EVERY DISH IS A <br>CHAPTER, AND EVERY<br>CONCEPT UNFOLDS </h1><h1 style="color:rgba(255, 242, 208, 1)">A NEW CULINARY ADVENTURE.</h1>
+            <p>Simply dummy text of the printing and typesetting industry. Lorem<br>Ipsum has been the industry's standard dummy.</p>
+            <a href="/#reserve" class="button" style="border: 2px solid #d4a059;
+            border-color: #d4a059;font-size: 23px;width:250px;font-family: 'josefin sans';">&nbsp&nbsp&nbsp&nbsp&nbspFor Reservations</a>
+        </div>
+    </div>
+</header>
+<style>
+     body {
+        margin: 0;
+        font-family: 'Cormorant Garamond','josefin sans', sans-serif;
+        background-color: #ffffff;
+        color: #fff;
+    }
+    .navbar {
+        background-color: #292d36;
+        overflow: hidden;
+        padding: 20px 10px;
+        text-align: center;
+    }
+    .navbar a {
+        font-size: 18px;
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-family: 'josefin sans';
+        text-transform: none;
+        
+    }
+    .navbar a:hover, .navbar a.active {
+        color: #ffd700;
+    }
+    .navbar a:hover, .navbar a.active {
+        color: #ffd700;
+    }
+   
+    .header {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    .header img {
+        width: 100%;
+        height: auto;
+    }
+    .header-text {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        text-align: left;
+    }
+    .header-text h1 {
+        font-size: 50px;
+        margin: 0;
+    }
+    .header-text p {
+        font-size: 20px;
+    }
+    .button {
+            border: 2px solid rgba(255, 242, 208, 1)";
+            border-color: rgba(255, 242, 208, 1)";
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .button:hover {
+        background-color: #ff9800;
+        color: white;
+}
+
+.container2 {
+        background:#292d36;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+            margin-top: 0px;
+            border-bottom: 0.1px solid rgb(134, 133, 133)
+    }
+
+
+
+
+.container4 {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+background-color: #292d36;
+}
+
+.contact-info h3, .newsletter p, .contact-details p {
+margin: 0 0 10px 0;
+font-size: 14px;
+}
+
+.contact-info, .newsletter, .contact-details {
+flex: 1;
+margin: 0 10px;
+}
+
+.newsletter form {
+display: flex;
+}
+
+.newsletter input[type="email"] {
+padding: 10px;
+border: none;
+margin-right: 10px;
+flex: 1;
+border-radius: 5px;
+}
+
+.newsletter button {
+padding: 10px;
+border: none;
+background-color: white;
+color: black;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.contact-details a {
+color: #d4a257;
+text-decoration: none;
+}
+
+.contact-details a:hover {
+text-decoration: underline;
+}
+
+.cormorant-garamond-light {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cormorant-garamond-medium {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.cormorant-garamond-semibold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.cormorant-garamond-bold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cormorant-garamond-light-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.cormorant-garamond-regular-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cormorant-garamond-medium-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.cormorant-garamond-semibold-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.cormorant-garamond-bold-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+.josefin-sans- <uniquifier> {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+</style>

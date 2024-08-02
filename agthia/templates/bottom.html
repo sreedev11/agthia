@@ -1,0 +1,262 @@
+{% load static %}
+<footer>
+
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  
+  <div class="container4">
+    <div class="contact-info"style="font-family: 'josefin sans';font-size: 19px;margin-left:5%">
+        <div><hr style=" background:#d4a059;
+            margin-left: -1px;
+            border: 1px solid #d4a059;
+            width:105px;
+            margin-bottom: -10px;
+        "></div>
+        <p style="font-family: 'josefin sans';color:white;font-size: 15px"> &nbsp&nbspCONTACTS
+        </p>
+        <div><hr style=" background:#d4a059;
+            border: 1px solid #d4a059;
+            margin-left: -1px;
+            width:105px;
+            margin-top:-14px;
+        "></div>
+        <p>AL SHARQIA TOWER<br>
+            FLOOR 7
+            <br>
+            JABER AL MUBARAK<br>STREET, BLOCK 2<br>
+           Kuwait City
+        </p>
+    </div>
+    
+    <div class="newsletter" style="margin-left: -30%;">
+        <p style="font-family: 'josefin sans'; font-size: 19px; margin-bottom: 1px; margin-left: 0;">
+            <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJoin our mailing list for updates,<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGet news & offers events.
+        </p>
+        <form method="POST" action="{% url 'subscribe' %}">
+          {% csrf_token %}
+            <input type="email" placeholder="Email" required style="max-width: 400px; height: 35px;background: #292d36;  border: 1px solid #ccc; border-radius: 1px; border-color: rgb(255, 254, 254); margin-right: -4px;">
+            <button type="submit" style="width: 150px; height: 57px; border-radius: 1px;">Subscribe</button>
+        </form><br><br>
+    </div>
+    <div class="contact-details" style="margin-left: -60%; text-align: right;">
+        <p style="font-family: 'josefin sans'; font-size: 19px;">22260445<br>
+           <a href="mailto:info@agthia-food.com">INFO@AGTHIA-FOOD.COM</a>
+        </p>
+    </div>
+    <div class="container4"></div>
+    <div class="container4"></div>
+    
+    
+   
+    
+</div>
+<div class="container5">
+    
+    <p style="font-family: 'josefin sans';text-align:center;font-size: 19px;">©Copyright</p>
+</div>
+   
+</footer>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Cormorant Garamond','josefin sans', sans-serif;
+        background-color: #ffffff;
+        color: #fff;
+    }
+    .navbar {
+        background-color: #292d36;
+        overflow: hidden;
+        padding: 20px 10px;
+        text-align: center;
+    }
+    .navbar a {
+        font-size: 18px;
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        text-transform: uppercase;
+    }
+    .navbar a:hover {
+        color: #ffd700;
+    }
+    .header {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    .header img {
+        width: 100%;
+        height: auto;
+    }
+    .header-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: left;
+    }
+    .header-text h1 {
+        font-size: 50px;
+        margin: 0;
+    }
+    .header-text p {
+        font-size: 20px;
+    }
+    .button {
+        border: 2px solid orange;
+        border-color: #ff9800;
+        color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+    .button:hover {
+    background-color: #ff9800;
+    color: white;
+}
+
+.container2 {
+        background:#292d36;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        margin-top: 0px;
+    }
+
+    .container5 {
+     background:#292d36;
+            color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0px;
+            border-top: 0.1px solid rgb(134, 133, 133); 
+}
+
+
+
+
+.container4 {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+background-color: #292d36;
+height: 230px;
+}
+
+.contact-info h3, .newsletter p, .contact-details p {
+margin: 0 0 10px 0;
+font-size: 14px;
+}
+
+.contact-info, .newsletter, .contact-details {
+flex: 1;
+margin: 0 10px;
+}
+
+.newsletter form {
+display: flex;
+}
+
+.newsletter input[type="email"] {
+padding: 10px;
+border: none;
+margin-right: 10px;
+flex: 1;
+border-radius: 5px;
+}
+
+.newsletter button {
+padding: 10px;
+border: none;
+background-color: white;
+color: black;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.newsletter input[type="email"]::placeholder {
+        color: white;
+    }
+
+.contact-details a {
+color: #d4a257;
+text-decoration: none;
+}
+
+.contact-details a:hover {
+text-decoration: underline;
+}
+
+.cormorant-garamond-light {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cormorant-garamond-medium {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.cormorant-garamond-semibold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.cormorant-garamond-bold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cormorant-garamond-light-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.cormorant-garamond-regular-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cormorant-garamond-medium-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.cormorant-garamond-semibold-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.cormorant-garamond-bold-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+</style>

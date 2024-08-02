@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agthia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+
+.cormorant-garamond-light {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cormorant-garamond-medium {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.cormorant-garamond-semibold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.cormorant-garamond-bold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cormorant-garamond-light-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.cormorant-garamond-regular-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cormorant-garamond-medium-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.cormorant-garamond-semibold-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.cormorant-garamond-bold-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+.josefin-sans- <uniquifier> {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+
+        body {
+            margin: 0;
+            font-family: 'Cormorant Garamond','josefin sans', sans-serif;
+            background-color: rgba(255, 242, 208, 1);
+            color: #fff;
+        }
+        .navbar {
+            background-color: #292d36;
+            overflow: hidden;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        .navbar a {
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'josefin sans';
+            
+            
+        }
+        .navbar a:hover, .navbar a.active {
+            color: #ffd700;
+        }
+        .header {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .header img {
+            width: 100%;
+            height: auto;
+        }
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+        }
+        .header-text h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        .header-text p {
+            font-size: 20px;
+        }
+        .button {
+            border: 2px solid #d4a059;
+            border-color: #d4a059;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .button:hover {
+        background-color: #ff9800;
+        color: white;
+}
+        .container {
+            background: linear-gradient(0deg, rgb(255, 255, 255) 13%, #f3eddf 13%);
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            height: auto;
+            margin-top: 0px;
+            font-family: 'josefin sans';
+        }
+        .container2 {
+            background:#292d36;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            margin-top: 0px;
+            border-bottom: 0.1px solid rgb(134, 133, 133); 
+           
+        }
+        
+        .image-section {
+    flex: 1;
+    max-width: 600px;
+    margin-right: 50px;
+}
+
+.image-section img {
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Add shadow to bottom and left */
+    box-shadow: -20px 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.image-section img:hover {
+    transform: scale(1.05);
+    /* Increase shadow intensity on hover */
+    box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+        .text-section {
+            flex: 1;
+            max-width: 600px;
+        }
+        .text-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .text-section p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .restaurants-section {
+            background: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .restaurants-section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: black;
+        }
+        .restaurants-section p {
+            margin-bottom: 40px;
+            color: #1f1e1e;
+        }
+        .restaurants {
+            display: flex;
+            justify-content: center;
+        }
+        .restaurant {
+            flex: 1;
+            margin: 0 10px;
+            max-width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .restaurant:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .restaurant img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .restaurant h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #333;
+            padding: 0 10px;
+        }
+
+        
+        .form-container {
+           
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        
+      
+        .form-group input[type="text"],
+         {
+            width: 100%;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        .form-group input:hover,
+    .form-group textarea:hover,
+    .form-group button:hover {
+        background-color: #ddd; /* Change the background color on hover */
+    }
+
+    .form-container:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Change the box shadow on hover */
+    }
+
+
+    /* Styling for the form container */
+.form-container {
+    width: 60%; /* Adjust the width for better visibility */
+    margin: auto;
+    padding: 40px; /* Increase padding for more space */
+    border: none; /* Remove border */
+    border-radius: 10px;
+    background-color: rgba(255, 242, 208, .93); /* Semi-transparent background */
+    text-align: center; /* Center-align text */
+}
+
+/* Styling for form inputs and button */
+.input-box {
+    width: 48%; /* Adjust width to fit two inputs in a row */
+    padding: 16px;
+    margin: 10px 1%;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Add border */
+    /* Add border radius */
+    border-color: black;
+    background-color:rgba(255, 242, 208, .93);;
+}
+.input-box::placeholder {
+    font-family: josefin sans;
+    color: black;
+    font-size: 20px;
+}
+
+.button2 {
+            border: 2px solid #d4a059;
+            border-color: #d4a059);
+            background: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+
+        }
+
+
+/* Hover effect for form inputs, textarea, and button */
+.input-box:hover,
+.button2:hover {
+    background-color:rgb(255, 244, 224); /* Change the background color on hover */
+}
+
+/* Styling for the background container */
+.container3 {
+    background-image: url('{% static 'img9.jpeg' %}');
+    background-repeat: no-repeat;
+    margin-top: 0;
+    
+    background-size: cover;
+    background-position: center;
+    height: 90vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.container4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #292d36;
+    height: 230px;
+}
+
+.container5 {
+     background:#292d36;
+            color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0px;
+            border-top: 0.1px solid rgb(134, 133, 133); 
+}
+
+.contact-info h3, .newsletter p, .contact-details p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.contact-info, .newsletter, .contact-details {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.newsletter form {
+    display: flex;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    margin-right: 10px;
+    flex: 1;
+    border-radius: 5px;
+    
+    
+}
+.newsletter input[type="email"]::placeholder {
+        color: white;
+    }
+
+.newsletter button {
+    padding: 10px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-details a {
+    color: #d4a257;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.vertical-line {
+            width: 3px; /* Set the width of the line */
+            height: 460px; /* Set the height of the line */
+            background-color: rgb(134, 129, 129); /* Set the color of the line */
+            margin: 0 auto; /* Center the line horizontally */
+        }
+
+     
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container2">
+
+        <img src="{% static 'logo.png' %}" alt="logo">
+
+    </div>
+    <div class="navbar">
+        <a href="/"class="{% if request.path == '/' %}active{% endif %}">Home</a>
+        <a href="#about"class="{% if request.path == '/brand/' %}active{% endif %}">About</a>
+        <a href="/brand/"class="{% if request.path == '/brand/' %}active{% endif %}">Restaurants</a>
+        <a href="#reserve">Reservation</a>
+        <a href="/contacts/"class="{% if request.path == '/contacts/' %}active{% endif %}">Contact</a>
+        <a href="/login/">Login</a>
+    </div>
+
+    <div class="header">
+        <img src="{% static 'img1.jpg' %}" alt="Delicious Food">
+        <div class="header-text">
+            <h1>EVERY DISH IS A <br>CHAPTER, AND EVERY<br>CONCEPT UNFOLDS </h1><h1 style="color:rgba(255, 242, 208, 1)">A NEW CULINARY ADVENTURE.</h1>
+            <p>Simply dummy text of the printing and typesetting industry. Lorem<br>Ipsum has been the industry's standard dummy.</p>
+            <a href="/#reserve" class="button" style="border: 2px solid #d4a059;
+            border-color: #d4a059;font-size: 23px;width:250px;font-family: 'josefin sans';">&nbsp&nbsp&nbsp&nbsp&nbspFor Reservations</a>
+       </div>
+    </div>
+
+    <div class="container"id="about">
+        <div class="image-section"style="margin-left: 13%;">
+            <img src="{% static 'img2.png' %}" alt="Food and Restaurant">
+        </div>
+        <div class="vertical-line"style="margin-left:2%;margin-top: -7%;">
+                
+        </div>
+        <div class="text-section"style="max-width:25%;margin-top: -7%;">
+            <h1 style="font-family: 'cormorantgaramond';margin-left: -80%;">About</h1>
+            <p style="font-size: 19px;margin-left: -80%;width:690px;" >Agthia Food Company is a family of unique food concepts that are built on sustainability and delicate culinary excellence.</p>
+            <p style="font-size: 19px;margin-left: -80%;width:690px;">We strive to provide everyone with affordable and high-quality food with a promise to sustain better human health and the environment, which will make a difference for generations to come.</p>
+            <h1 style="font-family: 'cormorantgaramond';margin-left: -80%;">Our People</h1>
+            <p style="font-size: 19px;margin-left: -80%;width:690px;">With more than 800+ employees, we would not be where we are today without the efforts of our employees. Our senior management that holds internationally recognized professionals in all functions, continues to drive our dynamic and collaborative organization. We have faith in diversity of personalities, experiences, and backgrounds as conducive to involve and leads to more innovative working lives.</p>
+        </div>
+    </div>
+
+    <div class="restaurants-section">
+        
+        <div><hr style=" background:#d4a059;
+            border: 1px solid #d4a059;
+            width:200px;
+            margin-bottom: -10px;
+        "></div>
+        <p style="font-family: 'josefin sans';color:black;font-size: 20px">   RESTAURANTS
+        </p>
+        <div><hr style=" background:#d4a059;
+            border: 1px solid #d4a059;
+            width:200px;
+            margin-top:-33px;
+        "></div>
+        <div class="heading-with-lines"></div>
+        <h2>LOCAL BRANDS</h2>
+        <p style="font-family: 'josefin sans';color:black;font-size: 20px">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as<br>opposed to using 'Content here, content making.'</p>
+        <div class="restaurants">
+            <div class="restaurant">
+                <img src="{% static 'img3.jpeg' %}" alt="Bu Masoud">
+                <h3 align="left">BU MASOUD</h3>
+            </div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <div class="restaurant">
+                <img src="{% static 'burger.jpeg' %}" alt="Burger Inn">
+                <h3 align="left">BURGER INN</h3>
+            </div>nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <div class="restaurant">
+                <img src="{% static 'img5.png' %}" alt="Fatayer Al Tayer">
+                <h3 align="left">FATAYER AL TAYER</h3>
+            </div>
+        </div>
+        
+    </div>
+    <div class="restaurants-section">
+        <h2>INTERNATIONAL BRANDS</h2>
+        <p style="font-family: 'josefin sans';font-size: 20px">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as<br>opposed to using 'Content here, content making.'</p>
+        <div class="restaurants">
+            <div class="restaurant">
+                <img src="{% static 'img6.png' %}" alt="Bu Masoud">
+                <h3 align="left">BEEFBAR</h3>
+            </div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <div class="restaurant">
+                <img src="{% static 'img7.png' %}" alt="Burger Inn">
+                <h3 align="left">NOVIKOV</h3>
+            </div>nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <div class="restaurant">
+                <img src="{% static 'img8.png' %}" alt="Fatayer Al Tayer">
+                <h3 align="left">FERDI</h3>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="restaurants-section">
+        <a href="/brand/" class="button" style="font-family: 'josefin sans';color:black;font-size: 20px;";>View Restaurants </a>
+
+    </div>
+    <div class="container3" id='reserve'>
+        <form method="POST" action="{% url 'reservation' %}">
+            {% csrf_token %}
+            <div class="form-container" style="height:640px;width: 900px;"><br><br><br><br><br>
+                <div>
+                    <hr style="background:#d4a059; border: 1px solid #d4a059; width:200px; margin-bottom: -11px;">
+                </div>
+                <p style="font-family: 'josefin sans'; color:black; font-size: 20px">RESERVATION</p>
+                <div>
+                    <hr style="background:#d4a059; border: 1px solid #d4a059; width:200px; margin-top:-16px;">
+                </div>
+                <h1 style="font-family:'Times New Roman'; color: black;">BOOK YOUR TABLE NOW</h1>
+                <div class="row">
+                    <input type="text" name="name" class="input-box" placeholder="Name" style="width: 300px;height:60px;" required>
+                    <input type="email" name="email" class="input-box" placeholder="Email" style="width: 300px;height:60px;" required>
+                </div>
+                <div class="row"><br>
+                    <input type="text" name="person" class="input-box" placeholder="Person" style="width: 190px;height:60px;" required>
+                    <input type="text" name="timing" class="input-box" placeholder="Timing" style="width: 190px;height:60px;" required>
+                    <input type="text" name="date" class="input-box" placeholder="Date" style="width: 190px;height:60px;" required>
+                </div><br>
+                <button type="submit" class="button2" style="font-family: 'josefin sans'; color:black; width: 190px;height:60px;font-size: 20px;">Book a Table</button>
+            </div>
+        </form>
+    </div>
+    <div class="container4">
+        <div class="contact-info"style="font-family: 'josefin sans';font-size: 19px;margin-left:5%">
+            <div><hr style=" background:#d4a059;
+                margin-left: -1px;
+                border: 1px solid #d4a059;
+                width:105px;
+                margin-bottom: -10px;
+            "></div>
+            <p style="font-family: 'josefin sans';color:white;font-size: 15px"> &nbsp&nbspCONTACTS
+            </p>
+            <div><hr style=" background:#d4a059;
+                border: 1px solid #d4a059;
+                margin-left: -1px;
+                width:105px;
+                margin-top:-14px;
+            "></div>
+            <p>AL SHARQIA TOWER<br>
+                FLOOR 7
+                <br>
+                JABER AL MUBARAK<br>STREET, BLOCK 2<br>
+               Kuwait City
+            </p>
+        </div>
+        
+        <div class="newsletter" style="margin-left: -30%;">
+            <p style="font-family: 'josefin sans'; font-size: 19px; margin-bottom: 1px; margin-left: 0;">
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJoin our mailing list for updates,<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGet news & offers events.
+            </p>
+            <form method="POST" action="{% url 'subscribe' %}">
+                {% csrf_token %}
+                <input type="email" name="email" placeholder="Email" required style="max-width: 400px; height: 35px;background: #292d36;  border: 1px solid #ccc; border-radius: 1px; border-color: rgb(255, 254, 254); margin-right: -4px;">
+                <button type="submit" style="width: 150px; height: 58px; border-radius: 1px;">Subscribe</button>
+            </form><br><br>
+        </div>
+        <div class="contact-details" style="margin-left: -60%; text-align: right;">
+            <p style="font-family: 'josefin sans'; font-size: 19px;">22260445<br>
+               <a href="mailto:info@agthia-food.com">INFO@AGTHIA-FOOD.COM</a>
+            </p>
+        </div>
+        <div class="container4"></div>
+        <div class="container4"></div>
+        
+        
+       
+        
+    </div>
+    <div class="container5">
+        
+        <p style="font-family: 'josefin sans';text-align:center;font-size: 19px;">©Copyright</p>
+    </div>
+
+</body>
+</html>

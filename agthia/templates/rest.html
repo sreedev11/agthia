@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        .restaurants-section {
+            background: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .restaurants-section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: black;
+        }
+        .restaurants {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 120px;
+        }
+        .restaurant {
+            flex: 1;
+            margin: 10px;
+            max-width: 300px;
+            
+            background-color: #fff;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .restaurant:hover {
+            transform: scale(1.05);
+            
+        }
+        .restaurant img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            width: 600px;
+            height: 600px;
+            object-fit: cover;
+        }
+        .burger {
+            text-align: left;
+            padding:5px 310px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'top.html' %}
+    <div class="restaurants-section">
+        <br><br>
+        <div style="text-align: center;">
+            <hr style="background: #d4a059; border: 1px solid #d4a059; width: 190px; margin: 0 auto; margin-bottom: -12px;">
+        </div>
+        <p style="font-family: 'Josefin Sans'; color: rgb(0, 0, 0); font-size: 20px; margin-bottom: 4px;">RESTAURANTS</p>
+        <div style="text-align: center;">
+            <hr style="background: #d4a059; border: 1px solid #d4a059; width: 190px; margin: 0 auto; margin-bottom: -8px;">
+        </div>
+        
+            
+            <h2 style="text-transform:uppercase;">{{ restaurant.get_brand_type_display }}</h2>
+
+            
+            <p style="font-family: 'Josefin Sans'; color: black; font-size: 20px;">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as<br>opposed to using 'Content here, content making.'</p>
+            <br><br><br><br><br>
+            <div class="restaurants">
+                <div class="image-container">
+                    <img src="{{ restaurant.image1.url }}" alt="Image 1">
+                    <img src="{{ restaurant.image2.url }}" alt="Image 2">
+                </div>
+            </div>
+            <div class="restaurants-section">
+                <p style="color: rgb(58, 56, 56); text-align: center;">
+                    <br><br><br>● -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ● 
+                </p>
+                <br>
+                <div class="burger">
+                    <h2 style="font-family: 'Cormorant Garamond'; color: black; margin-left: 5px;">{{ restaurant.heading }}</h2>
+                    <p style="font-family: 'Josefin Sans'; color: black; font-size: 20px;">{{ restaurant.description }}</p>
+                    <br>
+                </div>
+                <p style="color: rgb(58, 56, 56); text-align: center;">
+                    <br>● -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ● 
+                </p>
+                <br><br><br><br><br><br><br>
+                <div class="restaurants" style="margin-left:-90px;">
+                    {% if restaurant.additional_image1 %}
+                        <div class="restaurant">
+                            <img src="{{ restaurant.additional_image1.url }}" alt="Additional Image 1">
+                        </div>
+                    {% endif %}
+                    {% if restaurant.additional_image2 %}
+                        <div class="restaurant">
+                            <img src="{{ restaurant.additional_image2.url }}" alt="Additional Image 2">
+                        </div>
+                    {% endif %}
+                    {% if restaurant.additional_image3 %}
+                        <div class="restaurant">
+                            <img src="{{ restaurant.additional_image3.url }}" alt="Additional Image 3">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+      
+    </div>
+    <br><br><br>
+    {% include 'bottom.html' %}
+</body>
+</html>

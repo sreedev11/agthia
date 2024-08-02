@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agthia</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #fff;
+        }
+        .navbar {
+            background-color: #292d36;
+            overflow: hidden;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        .navbar a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            text-transform: uppercase;
+        }
+        .navbar a:hover {
+            color: #ffd700;
+        }
+        .header {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .header img {
+            width: 100%;
+            height: auto;
+        }
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+        }
+        .header-text h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        .header-text p {
+            font-size: 20px;
+        }
+        .button {
+            border: 2px solid orange;
+            border-color: #ff9800;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .button:hover {
+        background-color: #ff9800;
+        color: white;
+}
+
+.container2 {
+            background:#292d36;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            margin-top: 0px;
+        }
+
+
+
+
+.container4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2c2c2c;
+}
+
+.contact-info h3, .newsletter p, .contact-details p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.contact-info, .newsletter, .contact-details {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.newsletter form {
+    display: flex;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    margin-right: 10px;
+    flex: 1;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    padding: 10px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-details a {
+    color: #d4a257;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container2">
+
+        <img src="{% static 'logo.png' %}" alt="logo">
+
+    </div>
+    <div class="navbar">
+        <a href="#">Homes</a>
+        <a href="#">About</a>
+        <a href="#">Restaurants</a>
+        <a href="#">Reservation</a>
+        <a href="#">Contact</a>
+    </div>
+
+
+    <div class="header">
+        <img src="{% static 'img1.jpg' %}" alt="Delicious Food">
+        <div class="header-text">
+            <h1>EVERY DISH IS A <br>CHAPTER, AND EVERY<br>CONCEPT UNFOLDS </h1><h1 style="color:#ff9800;">A NEW CULINARY ADVENTURE.</h1>
+            <p>Simply dummy text of the printing and typesetting industry. Lorem<br>Ipsum has been the industry's standard dummy.</p>
+            <a href="#" class="button">For Reservations</a>
+        </div>
+    </div>
+    <h1 style="color: red;"> dkjbfkdafhasbhf</h1>
+  
+    
+    <div class="container4">
+        <div class="contact-info">
+            <h3>Contact</h3>
+            <p>Al Sharqia Tower<br>
+               Floor 7<br>
+               Jaber Al Mubarak Street, Block 2<br>
+               Kuwait City
+            </p>
+        </div>
+        <div class="newsletter">
+            <p>Join our mailing list for updates,<br>Get news & offers events.</p>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="contact-details"style="margin-left:auto;text-align:right;">
+            <p>92260445<br>
+               <a href="mailto:info@agthia-food.com">info@agthia-food.com</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        .restaurants-section {
+            background: #fff;
+            padding: 5px 310px;
+            text-align: center;
+        }
+        .restaurants-section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: black;
+        }
+        
+        .restaurants {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px; /* Reduced gap */
+        }
+
+        .image-container {
+            flex: 1 calc(30.33% - 10px); /* Adjusted to fit 3 images per row with reduced gap */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px; /* Reduced padding */
+            margin: 0px; /* Removed margin */
+        }
+
+        .image-container img {
+            height: 120px;
+            width: 100%;
+            max-width: 390px;
+            align-items: center;
+            border: 1px solid #030303;
+            border-radius: 20px;
+            border-color: rgb(0, 0, 0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cormorant-garamond-light {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 300;
+            font-style: normal.
+        }
+        .cormorant-garamond-regular {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 400;
+            font-style: normal.
+        }
+        .cormorant-garamond-medium {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+            font-style: normal.
+        }
+        .cormorant-garamond-semibold {
+            font-family: "Cormorant Garamond", serif.
+            font-weight: 600;
+            font-style: normal.
+        }
+        .cormorant-garamond-bold {
+            font-family: "Cormorant Garamond", serif.
+            font-weight: 700;
+            font-style: normal.
+        }
+        .cormorant-garamond-light-italic {
+            font-family: "Cormorant Garamond", serif.
+            font-weight: 300;
+            font-style: italic.
+        }
+        .cormorant-garamond-regular-italic {
+            font-family: "Cormorant Garamond", serif.
+            font-weight: 400;
+            font-style: italic.
+        }
+        .cormorant-garamond-medium-italic {
+            font-family: "Cormorant Garamond", serif.
+            font-weight: 500;
+            font-style: italic.
+        }
+        .cormorant-garamond-semibold-italic {
+            font-family: "Cormorant Garamond", serif.
+            font-weight: 600;
+            font-style: italic.
+        }
+        .cormorant-garamond-bold-italic {
+            font-family: "Cormorant Garamond", serif.
+            font-weight: 700;
+            font-style: italic.
+        }
+    </style>
+</head>
+<body>
+    {% include 'top.html' %}
+
+    <div class="restaurants-section">
+        <br><br><br><br>
+        <div style="text-align: center;">
+            <hr style="background: #d4a059; border: 1px solid #d4a059; width: 190px; margin: 0 auto; margin-bottom: -12px;">
+        </div>
+        <p style="font-family: 'josefin sans'; color: rgb(0, 0, 0); font-size: 20px; margin-bottom: 4px;">RESTAURANTS</p>
+        <div style="text-align: center;">
+            <hr style="background: #d4a059; border: 1px solid #d4a059; width: 190px; margin: 0 auto; margin-bottom: -8px;">
+        </div>
+
+        <h2>LOCAL BRANDS</h2>
+        <p style="font-family: 'josefin sans'; color: black; font-size: 20px;">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as<br>opposed to using 'Content here, content making.'</p>
+        <br><br><br><br><br>
+        <div class="restaurants">
+             {% for local in local_images %}
+    <div class="image-container">
+        <a href="{% url 'rest' local.id %}">
+            <img src="{{ local.image.url }}" alt="Local Image {{ local.id }}">
+        </a>
+        </div>
+        {% empty %}
+        <p>No local images found.</p>
+        {% endfor %} 
+        
+        </div>
+
+        <br><br><br><br><br>
+    </div> 
+
+    <div class="restaurants-section">
+        <h2>INTERNATIONAL BRANDS</h2>
+        <p style="font-family: 'josefin sans'; color: black; font-size: 20px;">Lorem Ipsum is that it has a more-or-less normal distribution of letters, as<br>opposed to using 'Content here, content making.'</p>
+        <br><br><br><br><br>
+        <div class="restaurants">
+            {% for image in inter_images %}
+            <div class="image-container">
+                <a href="{% url 'rest2' image.id %}">
+                    <img src="{{ image.image.url }}" alt="International Image {{ image.id }}">
+                </a>
+            </div>
+            {% empty %}
+            <p>No international images found.</p>
+            {% endfor %}
+        </div>
+        <br><br>
+    </div> 
+    <br><br>
+    {% include 'bottom.html' %}
+</body>
+</html>

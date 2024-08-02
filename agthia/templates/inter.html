@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>International Brands</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cormorant Garamond', 'Josefin Sans', sans-serif;
+            background-color: #ffffff;
+            color: #fff;
+        }
+
+        .cormorant-garamond-light {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+        .cormorant-garamond-regular {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .cormorant-garamond-medium {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .cormorant-garamond-semibold {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+        .cormorant-garamond-bold {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .cormorant-garamond-light-italic {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+        .cormorant-garamond-regular-italic {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+        .cormorant-garamond-medium-italic {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+            font-style: italic;
+        }
+        .cormorant-garamond-semibold-italic {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-style: italic;
+        }
+        .cormorant-garamond-bold-italic {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+        .josefin-sans- <uniquifier> {
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+        }
+
+        .container3 {
+            background-image: url({% static 'img1.jpg' %});
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            width: 100%;
+            height: 80vh;
+            box-sizing: border-box;
+        }
+
+        .form-container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #d4a059;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #d4a059;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="file"] {
+            width: 94%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-container input[type="text"]::placeholder {
+            color: #000;
+        }
+
+        .form-container input[type="file"]{
+            color: #d4a059;
+        }
+
+        .form-container input[type="text"]:focus,
+        .form-container input[type="file"]:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 10px #d4a059;
+            
+        }
+
+        .button {
+            border: 2px solid #d4a059;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #ff9800;
+            color: white;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'a_top.html' %}
+    
+    <div class="container3">
+        <div class="form-container">
+            <h2>Upload International Brands</h2>
+            <form method="post" enctype="multipart/form-data" action="/upload1/">
+                {% csrf_token %}
+                <label for="name">Brand Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter brand name">
+                
+                <label for="image">Upload Image</label>
+                <input type="file" name="image" id="image" accept="image/*">
+                
+                <button class='button' type="submit"style="color:black;font-family:'josefin sans';">Upload</button>
+            </form>
+        </div>
+        <div class="button-container">
+            <a href='/add_rest2/'>
+                <button class='button'style="color:black;font-family:'josefin sans';">Add Restaurant Details</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

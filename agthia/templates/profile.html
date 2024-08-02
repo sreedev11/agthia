@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cormorant Garamond', 'Josefin Sans', sans-serif;
+            background-color: #ffffff;
+            color: #000;
+            height: 100vh;
+        }
+
+        .profile-container {
+            text-align: center;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0px;
+            height: 78vh;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url({% static 'img1.jpg' %});
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+        }
+
+        .form-container {
+            background: rgba(0, 0, 0, 0.5);  
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            height:100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-size: cover;
+            background-position: center;
+            flex-direction: column; 
+        }
+
+        .profile-photo {
+            width: 320px; /* Increased size for better visibility */
+            height: 320px; /* Increased size for better visibility */
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin: 5px 0;
+            color: #d4a059;/* Set text color to black */
+        }
+
+        .profile-details {
+            margin-bottom: 20px;
+        }
+
+        .edit-button, .new-profile-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make buttons inline */
+        }
+
+        .edit-button:hover, .new-profile-button:hover {
+            background-color: #0056b3;
+        }
+        .button {
+            border: 2px solid #d4a059;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #ff9800;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    {% include 'a_top.html' %}
+    {% with profile=profiles.first %}
+    <div class="profile-container">
+        <div class="form-container">
+        <img src="{{ profile.profile_photo.url }}" alt="Profile Photo" class="profile-photo">
+        <div class="profile-details">
+            <h1 style="text-transform:uppercase;">{{ profile.name }}</h1>
+            <h1>{{ profile.phone }}</h1>
+            <h1><a href="mailto:{{ profile.email }}"style="color: #d4a059;">{{ profile.email }}</a></h1>
+            <h1>{{ profile.address }}</h1>
+        </div>
+        <a href="{% url 'edit-profile' profile.id %}" class="button">Edit Profile</a>
+        
+    </div>
+  </div>
+    {% endwith %}
+</body>
+</html>
